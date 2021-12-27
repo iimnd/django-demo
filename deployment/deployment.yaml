@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
         - name: djangoapp
-          image: tegarimansyah/djangoapp:0.0.3
+          image: iimnd/django-demo:1.0.1
           env:
             - name: DATABASE_URL
-              value: "postgresql://postgres:test_password@postgres-monitoring-demo.architect.svc.cluster.local:5432/db_name"
+              value: "postgresql://postgres:testpassword@postgres-monitoring-demo.architect.svc.cluster.local:5432/db_name"
           resources:
             request:
               memory: "64Mi"
