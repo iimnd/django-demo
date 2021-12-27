@@ -9,6 +9,7 @@ spec:
   template:
     metadata:
       annotations:
+        linkerd.io/inject: enabled
         prometheus.io/scrape: "true"
         prometheus.io/port: "8000"
       labels:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
         - name: djangoapp
-          image: iimnd/django-demo:1.0.1
+          image: iimnd/django-demo:1.0.2
           env:
             - name: DATABASE_URL
               value: "postgresql://postgres:testpassword@postgres-monitoring-demo.architect.svc.cluster.local:5432/db_name"
@@ -29,6 +30,12 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 3
+            periodSeconds: 3
 
 ---
 apiVersion: v1
