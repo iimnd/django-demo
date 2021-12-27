@@ -38,4 +38,4 @@ jobs:
 
       - name: Check file and folder
         run: |
-          docker run --rm tegarimansyah/djangoapp:${{ github.event.inputs.version }} sh -c "ls && tail *.txt"
+          docker run --rm iimnd/django-demo:${{ github.event.inputs.version }} sh -c "ls && tail *.txt"
