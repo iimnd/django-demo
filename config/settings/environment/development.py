@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-#&to%qr6++8dnc(d0zfk8ybyhuw1==95joqo-16!0*u!at#wri
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'monitoring-demo.sumpahpalapa.com', 'djangoapp-svc.architect.svc.cluster.local']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'monitoring-demo.sumpahpalapa.com']
 
 ROOT_URLCONF = "config.urls"
 
