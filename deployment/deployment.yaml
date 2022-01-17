@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: djangoapp
-          image: iimnd/django-demo:1.0.9
+          image: iimnd/django-demo:1.0.10
           env:
             - name: DATABASE_URL
               value: "postgresql://postgres:testpassword@postgres-monitoring-demo.architect.svc.cluster.local:5432/db_name"
@@ -27,6 +27,10 @@ spec:
                 fieldPath: status.podIP
             - name: DJANGO_ALLOWED_HOSTS
               value: '$(THIS_POD_IP)'
+            - name: HOST_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
           resources:
             request:
               memory: "64Mi"
