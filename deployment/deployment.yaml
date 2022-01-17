@@ -17,11 +17,11 @@ spec:
     spec:
       containers:
         - name: djangoapp
-          image: iimnd/django-demo:1.0.7
+          image: iimnd/django-demo:1.0.8
           env:
             - name: DATABASE_URL
               value: "postgresql://postgres:testpassword@postgres-monitoring-demo.architect.svc.cluster.local:5432/db_name"
-              
+
             - name: THIS_POD_IP
               valueFrom:
               fieldRef:

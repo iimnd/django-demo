@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-#&to%qr6++8dnc(d0zfk8ybyhuw1==95joqo-16!0*u!at#wri
 DEBUG = False
 
 #ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'monitoring-demo.sumpahpalapa.com', '34.101.250.202']
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['*'], cast=str)
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS','monitoring-demo.sumpahpalapa.com', default=['*'], cast=str)
 
 ROOT_URLCONF = "config.urls"
 
